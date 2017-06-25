@@ -11,21 +11,23 @@ function recipes(state=[], action) {
   }
 }
 
-function setFavoriteRecipe(state=[], action) {
+function favoriteRecipes(state=[], action) {
   switch (action.type) {
     case FAVORITE_RECIPE:
-      state = [...state, action.recipe];
+      const matchHref = (e) => (e.href === action.recipe.href);
+
+      if (state.findIndex(matchHref) === -1) {
+        state = [...state, action.recipe];
+      }
       return state;
     case UNFAVORITE_RECIPE:
       state = state.filter( item => item !== action.recipe)
-      console.log('Gone: ', state);
       return state;
     default:
       return state;
   }
 }
 
-
-const rootReducer = combineReducers({ recipes, setFavoriteRecipe });
+const rootReducer = combineReducers({ recipes, favoriteRecipes });
 
 export default rootReducer

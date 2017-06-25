@@ -5,10 +5,15 @@ import RecipeItem from './recipe_item';
 
 class RecipeList extends Component {
   render() {
-    console.log('this.props: ', this.props)
+    console.log('this.props: ', this.props);
     return (
       <div>
-        <h4><Link to='/favorites'>Favorites</Link></h4>
+        {
+          (this.props.favoriteRecipes.length > 0) ?
+            <h4 className="link"><Link to='/favorites'>Favorites</Link></h4>
+          :
+            <div></div>
+        }
 
         {
           this.props.recipes.map( (recipe, index) => {

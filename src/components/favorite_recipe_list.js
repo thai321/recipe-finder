@@ -11,7 +11,7 @@ class FavoriteRecipeList extends Component {
         <h4><Link to='/'>Home</Link></h4>
         <h4>Favorite Recipes:</h4>
         {
-          this.props.setFavoriteRecipe.map((recipe, index) => {
+          this.props.favoriteRecipes.map((recipe, index) => {
             return (
               <RecipeItem
                 key={index}
@@ -30,7 +30,7 @@ class FavoriteRecipeList extends Component {
 
 function mapStateToProps(state) {
   return {
-    setFavoriteRecipe: state.setFavoriteRecipe
+    favoriteRecipes: state.favoriteRecipes
   }
 }
 

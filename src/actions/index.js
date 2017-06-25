@@ -18,7 +18,6 @@ export function favoriteRecipe(recipe) {
 }
 
 export function unFavoriteRecipe(recipe) {
-  // console.log()
   return {
     type: UNFAVORITE_RECIPE,
     recipe

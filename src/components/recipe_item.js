@@ -59,6 +59,7 @@ class RecipeItem extends Component {
         </div>
 
         <img src={thumbnail} alt={title} className="recipe-img" />
+
       </div>
     )
   }
